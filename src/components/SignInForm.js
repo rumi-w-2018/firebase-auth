@@ -13,6 +13,7 @@ class SignInForm extends Component {
   // ES8 async - The second request will not be executed until first promise is resolved
   handleSubmit = async () => {
     try {
+      // let should be used for receiving data from await statement
       let { data } = await axios.post(`${ROOT_URL}/verifyOneTimePassword`, {
         phone: this.state.phone,
         code: this.state.code
